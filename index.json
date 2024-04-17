@@ -1,0 +1,144 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "john_doe",
+      "email": "john@example.com",
+      "fullName": "John Doe",
+      "avatar": "https://randomuser.me/api/portraits/men/1.jpg"
+    },
+    {
+      "id": 2,
+      "username": "jane_smith",
+      "email": "jane@example.com",
+      "fullName": "Jane Smith",
+      "avatar": "https://randomuser.me/api/portraits/women/2.jpg"
+    },
+    {
+      "id": 3,
+      "username": "mike_jackson",
+      "email": "mike@example.com",
+      "fullName": "Mike Jackson",
+      "avatar": "https://randomuser.me/api/portraits/men/3.jpg"
+    },
+    {
+      "id": 4,
+      "username": "emily_williams",
+      "email": "emily@example.com",
+      "fullName": "Emily Williams",
+      "avatar": "https://randomuser.me/api/portraits/women/4.jpg"
+    },
+    {
+      "id": 5,
+      "username": "chris_brown",
+      "email": "chris@example.com",
+      "fullName": "Chris Brown",
+      "avatar": "https://randomuser.me/api/portraits/men/5.jpg"
+    },
+    {
+      "id": 6,
+      "username": "sarah_miller",
+      "email": "sarah@example.com",
+      "fullName": "Sarah Miller",
+      "avatar": "https://randomuser.me/api/portraits/women/6.jpg"
+    },
+    {
+      "id": 7,
+      "username": "alex_rodriguez",
+      "email": "alex@example.com",
+      "fullName": "Alex Rodriguez",
+      "avatar": "https://randomuser.me/api/portraits/men/7.jpg"
+    },
+    {
+      "id": 8,
+      "username": "laura_wilson",
+      "email": "laura@example.com",
+      "fullName": "Laura Wilson",
+      "avatar": "https://randomuser.me/api/portraits/women/8.jpg"
+    },
+    {
+      "id": 9,
+      "username": "david_taylor",
+      "email": "david@example.com",
+      "fullName": "David Taylor",
+      "avatar": "https://randomuser.me/api/portraits/men/9.jpg"
+    },
+    {
+      "id": 10,
+      "username": "natalie_lee",
+      "email": "natalie@example.com",
+      "fullName": "Natalie Lee",
+      "avatar": "https://randomuser.me/api/portraits/women/10.jpg"
+    },
+    {
+      "id": 11,
+      "username": "steven_clark",
+      "email": "steven@example.com",
+      "fullName": "Steven Clark",
+      "avatar": "https://randomuser.me/api/portraits/men/11.jpg"
+    },
+    {
+      "id": 12,
+      "username": "olivia_jones",
+      "email": "olivia@example.com",
+      "fullName": "Olivia Jones",
+      "avatar": "https://randomuser.me/api/portraits/women/12.jpg"
+    },
+    {
+      "id": 13,
+      "username": "michael_davis",
+      "email": "michael@example.com",
+      "fullName": "Michael Davis",
+      "avatar": "https://randomuser.me/api/portraits/men/13.jpg"
+    },
+    {
+      "id": 14,
+      "username": "emma_thomas",
+      "email": "emma@example.com",
+      "fullName": "Emma Thomas",
+      "avatar": "https://randomuser.me/api/portraits/women/14.jpg"
+    },
+    {
+      "id": 15,
+      "username": "william_roberts",
+      "email": "william@example.com",
+      "fullName": "William Roberts",
+      "avatar": "https://randomuser.me/api/portraits/men/15.jpg"
+    },
+    {
+      "id": 16,
+      "username": "jessica_white",
+      "email": "jessica@example.com",
+      "fullName": "Jessica White",
+      "avatar": "https://randomuser.me/api/portraits/women/16.jpg"
+    },
+    {
+      "id": 17,
+      "username": "ryan_martin",
+      "email": "ryan@example.com",
+      "fullName": "Ryan Martin",
+      "avatar": "https://randomuser.me/api/portraits/men/17.jpg"
+    },
+    {
+      "id": 18,
+      "username": "amanda_lee",
+      "email": "amanda@example.com",
+      "fullName": "Amanda Lee",
+      "avatar": "https://randomuser.me/api/portraits/women/18.jpg"
+    },
+    {
+      "id": 19,
+      "username": "jacob_hall",
+      "email": "jacob@example.com",
+      "fullName": "Jacob Hall",
+      "avatar": "https://randomuser.me/api/portraits/men/19.jpg"
+    },
+    {
+      "id": 20,
+      "username": "sophia_morris",
+      "email": "sophia@example.com",
+      "fullName": "Sophia Morris",
+      "avatar": "https://randomuser.me/api/portraits/women/20.jpg"
+    }
+  ]
+}
