@@ -1,46 +1,47 @@
-
+/* Common styles */
 .navbar {
   background-color: #FF004F;
 }
-#getProducts{
+
+/* Products section */
+#getProducts {
   margin-top: 100px;
   margin-left: auto;
   margin-right: auto;
 }
+
 #products {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); 
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Flexible grid columns */
   gap: 20px;
 }
+
 .product img {
   max-width: 100%;
-  height: 200px; 
-  border-radius: 5px
+  height: auto; /* Adjust height automatically */
+  border-radius: 5px;
 }
+
 .price {
   color: green;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
-.title {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  font-size: 12px;
-  margin-top: 5px;
-}
-.description {
 
+.title, .description {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
 }
+
+/* New product form */
 #newProductForm {
-  width: 50%;
-  margin: 0 auto; /* This will center the form horizontally */
+  width: 90%; /* Adjust form width */
+  max-width: 400px; /* Limit maximum width */
+  margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #f9f9f9;
   margin-bottom: 50px;
-  
 }
 
 #newProductForm input[type="text"] {
@@ -64,4 +65,57 @@
 
 #newProductForm button[type="submit"]:hover {
   background-color: #0056b3;
+}
+
+/* User profiles section */
+.user-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Flexible grid columns */
+  gap: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.userProfile {
+  text-align: center;
+}
+
+.userPicture {
+  width: 150px; /* Adjust image width */
+  height: 150px; /* Adjust image height */
+  border-radius: 50%; /* Make image circular */
+}
+
+/* Carts section */
+.cart {
+  display: inline-block;
+  width: calc(25% - 20px); /* Adjust cart width */
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 30px;
+  vertical-align: top;
+  box-sizing: border-box;
+}
+
+.cart:last-child {
+  margin-right: 0;
+}
+
+.cart-image {
+  width: 100%;
+  height: auto; /* Adjust image height */
+  object-fit: cover;
+}
+
+.cart-info {
+  padding: 10px;
+  background-color: #0056b3;
+}
+
+.cart-product span {
+  margin-right: 10px;
+}
+
+.cart-product span:last-child {
+  margin-right: 0;
 }

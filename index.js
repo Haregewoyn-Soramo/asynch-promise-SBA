@@ -27,24 +27,26 @@ function getProducts() {
 
 
 function getUsers() {
-  fetch('./users.json')
+  fetch('./index.json')
     .then(res => res.json())
     .then(data => {
-      let output = `<h2>Users</h2>`;
+      let output = ' ';
       data.users.forEach(user => {
         output += `
-          <div class = "userProfile">
-            <img src="${user.avatar}" alt="${user.username} Avatar">
-            <h3>User ID: ${user.id}</h3>
-            <p>Username: ${user.username}</p>
-            <p>Email: ${user.email}</p>
-            <p>Full Name: ${user.fullName}</p>
+          <div class="userProfile">
+            <img class="userPicture" src="${user.avatar}" alt="${user.username} Avatar">
+            <h3 style="display: none;">User ID: ${user.id}</h3>
+            <p style="margin-bottom: 5px;display: none;">Username: ${user.username}</p>
+            <p style="margin-bottom: 5px;font-size:12px; font-style:bold">Email: ${user.email}</p>
+            <p style="margin-bottom: 5px;font-size:12px; font-style:bold"></p>Full Name: ${user.fullName}</p>
           </div>`;
       });
       document.getElementById('profile').innerHTML = output;
     })
     .catch(err => console.error('Error fetching users:', err));
 }
+
+
 
 function getCarts() {
   fetch('https://fakestoreapi.com/carts')
@@ -56,24 +58,31 @@ function getCarts() {
         const formattedDate = date.toLocaleDateString('en-US');
 
         output += `
-          <div>
-            <p>ID: ${cart.id}</p>
-            <p>User ID: ${cart.userId}</p>
-            <p>Date: ${formattedDate}</p>
-            <p>Products:</p>
-            <ul>`;
+          <div class="cart">
+            <img src="./images.png" alt="Cart" class="cart-image">
+            <div class="cart-info">
+              <p class="cart-id" style = "display:none">ID: ${cart.id}</p>
+              <p class="cart-user-id" style = "display:none">User ID: ${cart.userId}</p>
+              <p class="cart-date">Date: ${formattedDate}</p>
+              <p class="cart-products">Products:</p>
+              <ul class="cart-product-list">`;
         cart.products.forEach(product => {
           output += `
-            <li>ID: ${product.productId}</li>
-            <li>Quantity: ${product.quantity}</li>
+            <li class="cart-product">
+              <span class="product-id">ID: ${product.productId}</span>
+              <span class="product-quantity">Quantity: ${product.quantity}</span>
+            </li>
           `;
         });
-        output += `</ul></div>`;
+        output += `</ul>
+            </div>
+          </div>`;
       });
       document.getElementById('carts').innerHTML = output;
     })
     .catch(err => console.error('Error fetching carts:', err));
 }
+
 
 function populateCategoriesDropdown(categories) {
   const dropdownMenu = document.querySelector('.dropdown-menu');
@@ -101,7 +110,6 @@ function categoriesDd() {
 
 function addNewProducts() {
   const formTemplate = `
-  <h3> Add new products</h3>
   <form id="newProductForm">
     <input type="text" placeholder="enter title" name="title">
     <input type="text" placeholder="enter price" name="price">

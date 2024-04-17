@@ -28,7 +28,7 @@
             <li class="cart-menu">
               <a class="nav-link active" aria-current="page" href="#">Carts</a>
             </li>
-            <li class="addproducts" id="addNewProducts">
+            <li class="addproducts" >
               <a class="nav-link" href="#">Add Products</a>
             </li>
             <li class="user-prof">
@@ -38,7 +38,7 @@
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Catagories
               </a>
-              <ul class="dropdown-menu dropdown-menu-dark" id="categoriesDropdown">
+              <ul class="dropdown-menu dropdown-menu-dark" >
                 <li><a class="dropdown-item" href="#">select</a></li>
                 <li><a class="dropdown-item" href="#">Another action</a></li>
                 <li>
@@ -64,16 +64,21 @@
       <div id="products">products</div>
     </div>
   </div>
-  
-       
+     <hr>
+       <select name="" id="categoriesDropdown">
+        <option value="products"></option>
+       </select>
+
+
+       <button id="addNewProducts"> Add Products</button>
       <!-- <div id="getProducts"> Products</div>  -->
-       <div id="getUsers"> Users</div>
-       <div id="getCarts"> Carts</div>
-       <div id=".dropdown-menu "></div>
+       <button id="getUsers"> Users</button>
+       <button id="getCarts"> Carts</button> 
+       <div id="dropdown-menu "></div>
        <div id="addNewProducts"></div>
 <!--   
        <div id="products"></div> -->
-       <div id="profile"></div>
+       <div id="profile" class="user-container"></div>
        <div id="carts"></div>
        <div id="categoriesDropdown"></div>
        <div id="newProducts"></div>
