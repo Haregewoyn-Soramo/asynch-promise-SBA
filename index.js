@@ -1,8 +1,48 @@
-document.getElementById('getProducts').addEventListener('click', getProducts);
-document.getElementById('getUsers').addEventListener('click', getUsers);
-document.getElementById('getCarts').addEventListener('click', getCarts);;
-document.querySelector('.dropdown-menu ').addEventListener('click', categoriesDd)
-document.getElementById('addNewProducts').addEventListener('click', addNewProducts)
+document.getElementById('getProducts').addEventListener('click', function() {
+  toggleVisibility('products');
+  getProducts();
+});
+document.getElementById('getProducts').addEventListener('dblclick', function() {
+  toggleVisibility('products');
+});
+document.getElementById('getUsers').addEventListener('click', function() {
+  toggleVisibility('profile');
+  getUsers();
+});
+document.getElementById('getUsers').addEventListener('dblclick', function() {
+  toggleVisibility('profile');
+});
+document.getElementById('getCarts').addEventListener('click', function() {
+  toggleVisibility('carts');
+  getCarts();
+});
+document.getElementById('getCarts').addEventListener('dblclick', function() {
+  toggleVisibility('carts');
+});
+document.querySelector('.dropdown-menu ').addEventListener('click', function() {
+  toggleVisibility('categoriesDropdown');
+  categoriesDd();
+});
+document.querySelector('.dropdown-menu ').addEventListener('dblclick', function() {
+  toggleVisibility('categoriesDropdown');
+});
+document.getElementById('addNewProducts').addEventListener('click', function() {
+  toggleVisibility('newProducts');
+  addNewProducts();
+});
+document.getElementById('addNewProducts').addEventListener('dblclick', function() {
+  toggleVisibility('newProducts');
+});
+
+function toggleVisibility(id) {
+  const element = document.getElementById(id);
+  if (element.style.display === 'none' || element.style.display === '') {
+    element.style.display = 'grid';
+  } else {
+    element.style.display = 'none';
+  }
+}
+
 
 
 function getProducts() {
@@ -18,6 +58,8 @@ function getProducts() {
             <p class="price">Price: $${product.price}</p>
             <p class="description">${product.description}</p>
           </div>`;
+
+          
       });
       document.getElementById('products').innerHTML = output;
     })
@@ -110,12 +152,12 @@ function categoriesDd() {
 
 function addNewProducts() {
   const formTemplate = `
-  <form id="newProductForm">
-    <input type="text" placeholder="enter title" name="title">
-    <input type="text" placeholder="enter price" name="price">
-    <input type="text" placeholder="enter description" name="description">
-    <input type="text" placeholder="enter image URL" name="image">
-    <input type="text" placeholder="enter category" name="category">
+  <form id="newProductForm" >
+    <input style = "margin-top: 100px" type="text" placeholder="enter title of the product" name="title">
+    <input type="text" placeholder="enter price of the product" name="price">
+    <input type="text" placeholder="enter description of the product" name="description">
+    <input type="text" placeholder="enter image URL of the product" name="image">
+    <input type="text" placeholder="enter category of the product" name="category">
     <button type="submit">Add Product</button>
   </form>
   
@@ -149,3 +191,6 @@ function addNewProducts() {
   });
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+  getProducts();
+});

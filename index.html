@@ -28,7 +28,7 @@
             <li class="cart-menu">
               <a class="nav-link active" aria-current="page" href="#">Carts</a>
             </li>
-            <li class="addproducts" >
+            <li class="addproducts" id="addNewProducts">
               <a class="nav-link" href="#">Add Products</a>
             </li>
             <li class="user-prof">
@@ -38,7 +38,7 @@
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Catagories
               </a>
-              <ul class="dropdown-menu dropdown-menu-dark" >
+              <ul class="dropdown-menu dropdown-menu-dark" id="categoriesDropdown">
                 <li><a class="dropdown-item" href="#">select</a></li>
                 <li><a class="dropdown-item" href="#">Another action</a></li>
                 <li>
@@ -57,6 +57,21 @@
     </div>
   </nav>
   
+  <div id="profile" class="user-container"></div>
+  <div id="carts"></div>
+  <div id="categoriesDropdown"></div>
+  <div id="newProducts"></div>
+  <div id="newProductForm"></div>
+  <div id="categoriesDropdown"></div>
+
+  <div>
+    <button style="width: 300px; border-radius: 7px;background-color: #00A68C;color: white;height: 50px;font-weight: bold;" id="getUsers"> Users</button> 
+    <button style="width: 300px; border-radius: 7px;background-color: #00A68C;color: white;height: 50px;font-weight: bold;" id="getCarts"> Carts</button> 
+  </div>
+  
+  <div id=".dropdown-menu "></div>
+  <div id="addNewProducts"> add</div>
+
   <div class="container text-center" id="getProducts">
     <div class="row">
     </div>
@@ -65,25 +80,13 @@
     </div>
   </div>
      <hr>
-       <select name="" id="categoriesDropdown">
-        <option value="products"></option>
-       </select>
 
-
-       <button id="addNewProducts"> Add Products</button>
+      
       <!-- <div id="getProducts"> Products</div>  -->
-       <button id="getUsers"> Users</button>
-       <button id="getCarts"> Carts</button> 
-       <div id="dropdown-menu "></div>
-       <div id="addNewProducts"></div>
+       
 <!--   
        <div id="products"></div> -->
-       <div id="profile" class="user-container"></div>
-       <div id="carts"></div>
-       <div id="categoriesDropdown"></div>
-       <div id="newProducts"></div>
-       <div id="newProductForm"></div>
-       <div id="categoriesDropdown"></div>
+      
 
        
  
