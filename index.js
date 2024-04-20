@@ -1,5 +1,5 @@
 document.getElementById('getProducts').addEventListener('click', function() {
-  toggleVisibility('products');
+  // toggleVisibility('products');
   getProducts();
 });
 document.getElementById('getProducts').addEventListener('dblclick', function() {
@@ -168,7 +168,13 @@ function categoriesDd() {
     headers: {
       'content-type': 'application/json'
     },
-    body: JSON.stringify(newProductData)
+    body: JSON.stringify({
+      title: 'test product',
+      price: 13.5,
+      description: 'lorem ipsum set',
+      image: 'https://i.pravatar.cc',
+      category: 'electronic'
+    })
 
   })
   .then(res => res.json())
@@ -177,6 +183,7 @@ function categoriesDd() {
     document.getElementById('successMessage').style.display = 'block'; 
     form.reset();
     form.style.display = 'none';
+    console.log(data)
   })
   .catch(err =>{
     console.log('error adding new product: '+ err)
@@ -189,3 +196,40 @@ function categoriesDd() {
 });
 window.addEventListener('DOMContentLoaded', categoriesDd);
 window.addEventListener('DOMContentLoaded', getProducts);
+
+
+document.addEventListener('DOMContentLoaded',function(){
+  fetch('./cloth.json')
+  .then(res =>res.json())
+  .then (data => {
+    const carouselIndicators = document.getElementById('carouselIndicators')
+    const carouselInner = document.getElementById('carouselInner')
+
+  data.forEach((item, index) => {
+    const indicator = document.createElement('button');
+    indicator.setAttribute('type','button');
+    indicator.setAttribute('data-bs-target', '#carouselExampleIndicators');
+    indicator.setAttribute('data-bs-slide-to', index);
+    if (index === 0)indicator.classList.add('active')
+    carouselIndicators.appendChild(indicator);
+
+    const carouselItem = document.createElement('div');
+    carouselItem.classList.add('carousel-item');
+    if (index === 0)carouselItem.classList.add('active');
+
+    const image = document.createElement('img');
+    image.src = item.imageUrl;
+    image.classList.add('d-block', 'w-100');
+    carouselItem.appendChild(image);
+
+    carouselInner.appendChild(carouselItem);
+  })
+
+  })
+  .catch(err =>{
+    console.log('error fetching data: ', err);
+  })
+});
+
+
+      

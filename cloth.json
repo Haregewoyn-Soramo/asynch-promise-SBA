@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "imageUrl": "https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2F40e507dd0272b7bb46d376a326e6cb3c.cdn.bubble.io%2Ff1701952383558x153290322251626860%2FThe%2520New%2520Black%2520%252854%2529.jpeg?w=384&h=384&auto=compress&dpr=1&fit=max",
+    "category": "Shirts"
+  },
+  {
+    "id": 2,
+    "imageUrl": "https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2F40e507dd0272b7bb46d376a326e6cb3c.cdn.bubble.io%2Ff1701951532674x159142369425042240%2FThe%2520New%2520Black%2520%252847%2529.jpeg?w=384&h=384&auto=compress&dpr=1&fit=max",
+    "category": "Jeans"
+  },
+  {
+    "id": 3,
+    "imageUrl": "https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2F40e507dd0272b7bb46d376a326e6cb3c.cdn.bubble.io%2Ff1701555299386x641341873976609000%2FThe%2520New%2520Black%2520%252821%2529.jpeg?w=384&h=384&auto=compress&dpr=1&fit=max",
+    "category": "Dresses"
+  },
+  {
+    "id": 4,
+    "imageUrl": "https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2F40e507dd0272b7bb46d376a326e6cb3c.cdn.bubble.io%2Ff1701554182426x455137287306253600%2FThe%2520New%2520Black%2520%25287%2529.jpeg?w=384&h=384&auto=compress&dpr=1&fit=max",
+    "category": "T-shirts"
+  },
+  {
+    "id": 5,
+    "imageUrl": "https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2F40e507dd0272b7bb46d376a326e6cb3c.cdn.bubble.io%2Ff1710019619899x258986001648994200%2Fremove-background-photo-ai.jpg?w=384&h=384&auto=compress&dpr=1&fit=max",
+    "category": "Sweaters"
+  },
+  {
+    "id": 6,
+    "imageUrl": "https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2F40e507dd0272b7bb46d376a326e6cb3c.cdn.bubble.io%2Ff1703232239583x939983272725014800%2FThe%2520New%2520Black%2520%252825%2529.jpeg?w=384&h=384&auto=compress&dpr=1&fit=max",
+    "category": "Jackets"
+  },
+  {
+    "id": 7,
+    "imageUrl": "https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2F40e507dd0272b7bb46d376a326e6cb3c.cdn.bubble.io%2Ff1703232361591x266397639480480130%2FThe%2520New%2520Black%2520%252821%2529.jpeg?w=384&h=384&auto=compress&dpr=1&fit=max",
+    "category": "Skirts"
+  },
+  {
+    "id": 8,
+    "imageUrl": "https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2F40e507dd0272b7bb46d376a326e6cb3c.cdn.bubble.io%2Ff1707996358429x300173983587331140%2FThe%2520New%2520Black%2520%252820%2529.jpeg?w=384&h=384&auto=compress&dpr=1&fit=max",
+    "category": "Shorts"
+  }
+]
