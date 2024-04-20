@@ -145,52 +145,47 @@ function categoriesDd() {
       data.forEach(category => {
         output += `<li><a class="dropdown-item" href="#">${category}</a></li>`;
       });
-      document.getElementById('categoriesDropdown').innerHTML = output;
+      const dropdownMenu = document.getElementById('categoriesDropdown').innerHTML = output;
     })
     .catch(err => console.error('Error fetching categories:', err));
 }
 
-function addNewProducts() {
-  const formTemplate = `
-  <form id="newProductForm" >
-    <input style = "margin-top: 100px" type="text" placeholder="enter title of the product" name="title">
-    <input type="text" placeholder="enter price of the product" name="price">
-    <input type="text" placeholder="enter description of the product" name="description">
-    <input type="text" placeholder="enter image URL of the product" name="image">
-    <input type="text" placeholder="enter category of the product" name="category">
-    <button type="submit">Add Product</button>
-  </form>
-  
-  `;
+// function addNewProducts() {
+  document.getElementById('newProductForm').addEventListener('submit', function(e){
+  e.preventDefault();
 
-  document.getElementById('newProducts').innerHTML = formTemplate;
 
-  document.getElementById('newProductForm').addEventListener('submit', function(event) {
-    event.preventDefault(); 
-    const formData = new FormData(this);
+  const form = e.target;
+  if(form.checkValidity()){
+  const formData = new FormData(form);
+  const newProductData = {};
+  formData.forEach((value,key) =>{
+    newProductData[key] = value;
+  })
 
-    const newProductData = {};
-    formData.forEach((value, key) => {
-      newProductData[key] = value;
-    });
+  fetch('https://fakestoreapi.com/products',{
+    method: "POST",
+    headers: {
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify(newProductData)
 
-    fetch('https://fakestoreapi.com/products', {
-      method: "POST",
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(newProductData)
-    })
-    .then(res => res.json())
-    .then(data => {
-      console.log('New product added:', data);
-    })
-    .catch(error => {
-      console.error('Error adding new product:', error);
-    });
+  })
+  .then(res => res.json())
+  .then(data =>{
+    console.log('new product added: ', data);
+    document.getElementById('successMessage').style.display = 'block'; 
+    form.reset();
+    form.style.display = 'none';
+  })
+  .catch(err =>{
+    console.log('error adding new product: '+ err)
   });
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  getProducts();
+ } 
+ 
+ else {
+    console.log('form inputs are invalid');
+  }
 });
+window.addEventListener('DOMContentLoaded', categoriesDd);
+window.addEventListener('DOMContentLoaded', getProducts);
