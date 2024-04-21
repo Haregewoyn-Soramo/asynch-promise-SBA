@@ -46,7 +46,7 @@ function toggleVisibility(id) {
 
 
 function getProducts() {
-  fetch('https://fakestoreapi.com/products')
+  fetch('https://api.escuelajs.co/api/v1/products')
     .then(res => res.json())
     .then(data => {
       let output = '';
@@ -150,50 +150,92 @@ function categoriesDd() {
     .catch(err => console.error('Error fetching categories:', err));
 }
 
-// function addNewProducts() {
-  document.getElementById('newProductForm').addEventListener('submit', function(e){
-  e.preventDefault();
 
+function addNewProducts() {
+  const formTemplate = `
+    // <h3> Add new products</h3>
+    <form id="newProductForm" >
+      <input type="text" style = "margin-top = 100px" placeholder="Enter Product Title" name="title">
+      <input type="text" placeholder="Enter Product Price" name="price">
+      <input type="text" placeholder="Enter Product Description" name="description">
+      <input type="text" placeholder="Enter Product Image URL" name="image">
+      <input type="text" placeholder="Enter Product Category" name="category">
+      <button type="submit">Add Product</button>
+    </form>`;
 
-  const form = e.target;
-  if(form.checkValidity()){
-  const formData = new FormData(form);
-  const newProductData = {};
-  formData.forEach((value,key) =>{
-    newProductData[key] = value;
+  document.getElementById('newProducts').innerHTML = formTemplate;
+
+  document.getElementById('newProductForm').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+    const formData = new FormData(this);
+    
+    const newProductData = {};
+    formData.forEach((value, key) => {
+      newProductData[key] = value;
+    });
   })
-
-  fetch('https://fakestoreapi.com/products',{
-    method: "POST",
-    headers: {
-      'content-type': 'application/json'
-    },
-    body: JSON.stringify({
-      title: 'test product',
-      price: 13.5,
-      description: 'lorem ipsum set',
-      image: 'https://i.pravatar.cc',
-      category: 'electronic'
+    fetch('https://fakestoreapi.com/products', {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newProductData)
     })
+    .then(res => res.json())
+    .then(data => {
+      console.log('New product added:', data);
+    })
+    .catch(error => {
+      console.error('Error adding new product:', error);
+    });
+  };
 
-  })
-  .then(res => res.json())
-  .then(data =>{
-    console.log('new product added: ', data);
-    document.getElementById('successMessage').style.display = 'block'; 
-    form.reset();
-    form.style.display = 'none';
-    console.log(data)
-  })
-  .catch(err =>{
-    console.log('error adding new product: '+ err)
-  });
- } 
+
+
+// function addNewProducts() {
+//   document.getElementById('newProductForm').addEventListener('submit', function(e){
+//   e.preventDefault();
+
+
+//   const form = e.target;
+//   if(form.checkValidity()){
+//   const formData = new FormData(form);
+//   const newProductData = {};
+//   formData.forEach((value,key) =>{
+//     newProductData[key] = value;
+//   })
+
+//   fetch('https://fakestoreapi.com/products',{
+//     method: "POST",
+//     headers: {
+//       'content-type': 'application/json'
+//     },
+//     body: JSON.stringify({
+//       title: 'test product',
+//       price: 13.5,
+//       description: 'lorem ipsum set',
+//       image: 'https://i.pravatar.cc',
+//       category: 'electronic'
+//     })
+
+//   })
+//   .then(res => res.json())
+//   .then(data =>{
+//     console.log('new product added: ', data);
+//     document.getElementById('successMessage').style.display = 'block'; 
+//     form.reset();
+//     form.style.display = 'none';
+//     console.log(data)
+//   })
+//   .catch(err =>{
+//     console.log('error adding new product: '+ err)
+//   });
+//  } 
  
- else {
-    console.log('form inputs are invalid');
-  }
-});
+//  else {
+//     console.log('form inputs are invalid');
+//   }
+// });
 window.addEventListener('DOMContentLoaded', categoriesDd);
 window.addEventListener('DOMContentLoaded', getProducts);
 
