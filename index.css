@@ -120,9 +120,10 @@
 .user-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-  gap: 20px;
+  gap: 25px;
   margin-left: 50px;
   margin-right: 50px;
+  color: white;
 }
 
 .userProfile {
@@ -130,9 +131,11 @@
 }
 
 .userPicture {
+  margin-top: 200px;
   width: 150px; 
   height: 150px; 
-  border-radius: 50%; 
+
+  /* border-radius: 50%;  */
 }
 
 .cart {

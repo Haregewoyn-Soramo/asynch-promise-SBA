@@ -46,7 +46,7 @@ function toggleVisibility(id) {
 
 
 function getProducts() {
-  fetch('https://api.escuelajs.co/api/v1/products')
+  fetch('https://fakestoreapi.com/products')
     .then(res => res.json())
     .then(data => {
       let output = '';
@@ -153,27 +153,28 @@ function categoriesDd() {
 
 function addNewProducts() {
   const formTemplate = `
-    // <h3> Add new products</h3>
-    <form id="newProductForm" >
-      <input type="text" style = "margin-top = 100px" placeholder="Enter Product Title" name="title">
-      <input type="text" placeholder="Enter Product Price" name="price">
-      <input type="text" placeholder="Enter Product Description" name="description">
-      <input type="text" placeholder="Enter Product Image URL" name="image">
-      <input type="text" placeholder="Enter Product Category" name="category">
+    <h3> Add new products</h3>
+    <form id="newProductForm" style = "margin-top: 50px">
+      <input type="text" placeholder="enter title" name="title" >
+      <input type="text" placeholder="enter price" name="price">
+      <input type="text" placeholder="enter description" name="description">
+      <input type="text" placeholder="enter image URL" name="image">
+      <input type="text" placeholder="enter category" name="category">
       <button type="submit">Add Product</button>
-    </form>`;
+    </form>
+  `;
 
   document.getElementById('newProducts').innerHTML = formTemplate;
 
   document.getElementById('newProductForm').addEventListener('submit', function(event) {
     event.preventDefault(); 
     const formData = new FormData(this);
-    
+
     const newProductData = {};
     formData.forEach((value, key) => {
       newProductData[key] = value;
     });
-  })
+
     fetch('https://fakestoreapi.com/products', {
       method: "POST",
       headers: {
@@ -188,8 +189,8 @@ function addNewProducts() {
     .catch(error => {
       console.error('Error adding new product:', error);
     });
-  };
-
+  });
+}
 
 
 // function addNewProducts() {
